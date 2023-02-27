@@ -2,7 +2,7 @@
 <html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<title>Register | Belajar</title>
+<title>Register Role | Belajar</title>
 </html>
 <style>
     #register-header {
@@ -64,7 +64,7 @@
 <div class="align-items-center content">
     <div class="container align-content-center my-5">
         <div id="connection" class="rounded d-flex justify-content-center">
-            <?php require_once "koneksi.php" ?>
+            <?php require_once "../user_role/connection.php" ?>
         </div>
         <h2 id="register-header">Register</h2>
         <?php
@@ -74,16 +74,17 @@
          * menekan tombol submit
          **/
         if (isset($_POST['submit'])) {
-            $username = strip_tags($_POST['username']);
-            $email = strip_tags($_POST['email']);
             $name = strip_tags($_POST['name']);
+            $role = strip_tags($_POST['role']);
+            $email = strip_tags($_POST['email']);
             $password = strip_tags($_POST['password']);
+            $address = strip_tags($_POST['address']);
 
             /**
              * membuat sebuah validasi jika salah satu dari mereka kosong maka akan
              * keluar pesan ini:
              */
-            if (empty($username) || empty($email) || empty($name) || empty($password)) {
+            if (empty($name) || empty($email) || empty($password) || empty($address)) {
                 echo "<div class='rounded test mx-5 bg-warning'>
                         <p class='text-view'>Data must be filled!</p>
                       </div>";
@@ -92,7 +93,7 @@
                  * Lain jika saat kita memasukkan data yang sama seperti yang kita
                  * isi sebelumnya maka yang akan keluar adalah text ini:
                  **/
-            } elseif (count((array)$connectMySql->query('SELECT username FROM users WHERE username = "' . $username . '"')->fetch_array()) > 1) {
+            } elseif (count((array)$connectMySql->query('SELECT email FROM access WHERE email = "' . $email . '"')->fetch_array()) > 1) {
                 echo '<div class=\' rounded test mx-5 bg-info \'>
                         <p class=\'text-view\'>Data was exist!</p>
                       </div>';
@@ -109,7 +110,7 @@
                  * kalau di hash maka akan menjadi $2y$10$iY30uBx4OOt.
                  */
                 $passwdHash = md5($password);
-                $input = $connectMySql->query("INSERT INTO users(name, email, username, password) VALUES ('$name', '$email', '$username', '$passwdHash')");
+                $input = $connectMySql->query("INSERT INTO access(name, role, email, password, address) VALUES ('$name', '$role', '$email', '$passwdHash', '$address')");
                 header("location: ../user_role/login_role.php");
                 if ($input) {
                     echo 'success';
@@ -122,19 +123,23 @@
 
         <form method="post" id="register-form" class="mx-5">
             <div class="mb-3">
+                <label class="form-label">Complete name</label>
+                <input type="text" class="form-control" name="name" autocomplete="off"
+                       placeholder="Input your full name">
+            </div>
+            <select name="role" class="form-control">
+                <option selected disabled>-- Select Role --</option>
+                <option value="admin">Admin</option>
+                <option value="guest">Guest</option>
+            </select>
+            <div class="mb-3">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" autocomplete="off" placeholder="Input your email">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-            <div class="mb-2">
-                <label class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" autocomplete="off"
-                       placeholder="Input your username">
-            </div>
             <div class="mb-3">
-                <label class="form-label">Complete name</label>
-                <input type="text" class="form-control" name="name" autocomplete="off"
-                       placeholder="Input your full name">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" name="address" rows="5" placeholder="Isi alamat..."></textarea>
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>

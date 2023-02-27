@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="022b1f59-5736-4eff-9a09-45eb7aa28365" name="Default Changelist" comment="" />
+    <list default="true" id="022b1f59-5736-4eff-9a09-45eb7aa28365" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/logout_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/add_admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/admin_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/connection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/delete_admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/edit_admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/guest_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/login_role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/logout_role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_role/register_role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PHP_database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PHP_database.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/home_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,11 +34,15 @@
   <component name="FavoritesManager">
     <favorites_list name="PHP_database" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/register.php" root0="SKIP_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="2KiT6sSbXkjHl2nBL569mvYgygp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,8 +51,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PHP_Fundamental" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user_role" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user_role/image" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user_role" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -48,7 +79,23 @@
       <workItem from="1676001972960" duration="8648000" />
       <workItem from="1676248453614" duration="15394000" />
       <workItem from="1676272090682" duration="1043000" />
-      <workItem from="1676354115267" duration="2533000" />
+      <workItem from="1676354115267" duration="3136000" />
+      <workItem from="1676358154186" duration="713000" />
+      <workItem from="1676361701270" duration="27000" />
+      <workItem from="1676441025757" duration="6168000" />
+      <workItem from="1676511743168" duration="5182000" />
+      <workItem from="1676617150045" duration="4480000" />
+      <workItem from="1676856408556" duration="1099000" />
+      <workItem from="1676865153649" duration="866000" />
+      <workItem from="1676872701676" duration="7782000" />
+      <workItem from="1676950549231" duration="101000" />
+      <workItem from="1676959710753" duration="5788000" />
+      <workItem from="1676967317479" duration="228000" />
+      <workItem from="1677036823758" duration="3196000" />
+      <workItem from="1677040199577" duration="6049000" />
+      <workItem from="1677071554417" duration="613000" />
+      <workItem from="1677155888092" duration="15000" />
+      <workItem from="1677478302995" duration="426000" />
     </task>
     <servers />
   </component>
@@ -72,37 +119,53 @@
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="455" y="100" width="1004" height="839" key="#Web_Browsers/0.0.1920.1038@0.0.1920.1038" timestamp="1676003446482" />
+    <state x="605" y="310" width="703" height="419" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1677047584096">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="605" y="310" width="703" height="419" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1038@0.0.1920.1038" timestamp="1677047584096" />
     <state x="710" y="392" width="494" height="255" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1675994448000">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="710" y="392" width="494" height="255" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1675994448000" />
-    <state x="693" y="223" width="528" height="594" key="FileChooserDialogImpl" timestamp="1676251192365">
+    <state x="471" y="59" width="972" height="922" key="CommitChangelistDialog2" timestamp="1676446212203">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="693" y="223" width="528" height="594" key="FileChooserDialogImpl/0.0.1920.1038@0.0.1920.1038" timestamp="1676251192365" />
-    <state x="751" y="433" width="412" height="173" key="NewPhpFileDialog" timestamp="1676012487256">
+    <state x="471" y="59" width="972" height="922" key="CommitChangelistDialog2/0.0.1920.1038@0.0.1920.1038" timestamp="1676446212203" />
+    <state x="693" y="223" width="528" height="594" key="FileChooserDialogImpl" timestamp="1677155898846">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="751" y="433" width="412" height="173" key="NewPhpFileDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1676012487256" />
+    <state x="693" y="223" width="528" height="594" key="FileChooserDialogImpl/0.0.1920.1038@0.0.1920.1038" timestamp="1677155898846" />
+    <state x="751" y="433" width="412" height="173" key="NewPhpFileDialog" timestamp="1676874585571">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="751" y="433" width="412" height="173" key="NewPhpFileDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1676874585571" />
     <state x="464" y="155" key="SettingsEditor" timestamp="1676002267726">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="464" y="155" key="SettingsEditor/0.0.1920.1038@0.0.1920.1038" timestamp="1676002267726" />
-    <state x="568" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1676354237615">
+    <state width="623" height="498" key="SwitcherDM" timestamp="1676967543277">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="568" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1676354237615" />
+    <state width="623" height="498" key="SwitcherDM/0.0.1920.1038@0.0.1920.1038" timestamp="1676967543277" />
+    <state x="568" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1677478302960">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="568" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1677478302960" />
     <state x="535" y="261" width="880" height="490" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1676251217168">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="535" y="261" width="880" height="490" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1676251217168" />
-    <state x="538" y="233" key="run.anything.popup" timestamp="1676262366585">
+    <state x="538" y="233" key="run.anything.popup" timestamp="1676962749955">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="538" y="233" key="run.anything.popup/0.0.1920.1038@0.0.1920.1038" timestamp="1676262366585" />
-    <state x="623" y="229" width="840" height="678" key="search.everywhere.popup" timestamp="1676270834946">
+    <state x="538" y="233" key="run.anything.popup/0.0.1920.1038@0.0.1920.1038" timestamp="1676962749955" />
+    <state x="623" y="229" width="840" height="678" key="search.everywhere.popup" timestamp="1677050814239">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="623" y="229" width="840" height="678" key="search.everywhere.popup/0.0.1920.1038@0.0.1920.1038" timestamp="1676270834946" />
+    <state x="623" y="229" width="840" height="678" key="search.everywhere.popup/0.0.1920.1038@0.0.1920.1038" timestamp="1677050814239" />
+    <state x="683" y="423" width="548" height="194" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1677051469413">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="683" y="423" width="548" height="194" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1677051469413" />
   </component>
 </project>

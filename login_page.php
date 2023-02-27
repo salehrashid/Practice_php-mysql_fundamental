@@ -67,59 +67,94 @@
         </div>
         <h2 id="login-header">Login</h2>
         <?php
-
-        /**
-         * jika tombol submit diklik
-         */
-        if (isset($_POST["submit"])) {
-            $username = strip_tags($_POST["username"]);
-            $password = strip_tags($_POST["password"]);
+        /** Menambahkan error list **/
+        error_reporting(0);
+        /** membuat sebuah sesi start **/
+        session_start();
+        /** membuah sebuah  **/
+        if (isset($_SESSION['name'])) {
+            header("location: home_page.php");
         }
+        /** membuat sebuah validasi mencocokan username password didatabase **/
+        if (isset($_POST["submit"])) {
+            $username = $_POST["username"];
+            $password = md5($_POST["password"]);
 
-        /**
-         * validasi data
-         * jika data tidak ada maka kamu akan mengisinya
-         */
-        if (empty($username) || empty($password)) {
-            echo "<div class='rounded test mx-5 bg-info'>
-                    <p class='text-view'>Fill your own data</p>
-                  </div>";
-
-            /**
-             * yang lain jika user memasukkan username yang selain dimasukkan sebelumnya misalnya:
-             * yang pertama salvaz dan yang dimasukin adalah salva maka yang
-             * akan muncul adalah tulisan berikut:
-             */
-        } elseif (count((array)$connect->query('SELECT username FROM users WHERE username = "' . $username . '"')->fetch_array()) == 0) {
-            echo "<div class='rounded test mx-5 bg-warning'>
-                    <p class='text-view'>Username or password not registered</p>
-                  </div>";
-        } else {
-
-            /**
-             * fungsi assoc = konversi dari bahasa query ke format bahasa pemrograman
-             */
-            $user = $connect->query("SELECT username, password FROM users")->fetch_assoc();
-
-            /**
-             * pencocokan password dan username ketikan dengan yang ada di database, jika benar maka
-             * akan pindah ke halaman home, dan jika salah maka akan masuk ke block else nya
-             */
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['is_login'] = true;
-                $_SESSION['nama'] = $user['nama'];
+            $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+            $result = mysqli_query($connectMySql, $query);
+            if ($result->num_rows > 0) {
+                $line = mysqli_fetch_assoc($result);
+                $_SESSION["name"] = $line["name"];
+                $_SESSION["username"] = $line["username"];
+                $_SESSION["email"] = $line["email"];
                 header("location: home_page.php");
-
-                /**
-                 * jika user salah memasukkan username atau password yang salah satunya salah
-                 **/
+            } elseif (count((array)$connectMySql->query('SELECT username FROM users WHERE username = "' . $username . '"')->fetch_array()) == 0) {
+                echo "<div class='rounded test mx-5 bg-warning'>
+                         <p class='text-view'>Username or password not registered</p>
+                      </div>";
             } else {
                 echo "<div class='rounded test mx-5 bg-danger'>
-                        <p class='text-view'>Wrong username or password</p>
+                         <p class='text-view'>Wrong username or password</p>
                       </div>";
             }
         }
+
         ?>
+
+        <?php
+        //
+        //        /**
+        //         * jika tombol submit diklik
+        //         */
+        //        if (isset($_POST["submit"])) {
+        //            $username = strip_tags($_POST["username"]);
+        //            $password = strip_tags($_POST["password"]);
+        //        }
+        //
+        //        /**
+        //         * validasi data
+        //         * jika data tidak ada maka kamu akan mengisinya
+        //         */
+        //        if (empty($username) || empty($password)) {
+        //            echo "<div class='rounded test mx-5 bg-info'>
+        //                    <p class='text-view'>Fill your own data</p>
+        //                  </div>";
+        //
+        //            /**
+        //             * yang lain jika user memasukkan username yang selain dimasukkan sebelumnya misalnya:
+        //             * yang pertama salvaz dan yang dimasukin adalah salva maka yang
+        //             * akan muncul adalah tulisan berikut:
+        //             */
+        //        } elseif (count((array)$connect->query('SELECT username FROM users WHERE username = "' . $username . '"')->fetch_array()) == 0) {
+        //            echo "<div class='rounded test mx-5 bg-warning'>
+        //                    <p class='text-view'>Username or password not registered</p>
+        //                  </div>";
+        //        } else {
+        //
+        //            /**
+        //             * fungsi assoc = konversi dari bahasa query ke format bahasa pemrograman
+        //             */
+        //            $user = $connect->query("SELECT username, password FROM users")->fetch_assoc();
+        //
+        //            /**
+        //             * pencocokan password dan username ketikan dengan yang ada di database, jika benar maka
+        //             * akan pindah ke halaman home, dan jika salah maka akan masuk ke block else nya
+        //             */
+        //            if (password_verify($password, $user['password'])) {
+        //                $_SESSION['is_login'] = true;
+        //                $_SESSION['nama'] = $user['nama'];
+        //                header("location: home_page.php");
+        //
+        //                /**
+        //                 * jika user salah memasukkan username atau password yang salah satunya salah
+        //                 **/
+        //            } else {
+        //                echo "<div class='rounded test mx-5 bg-danger'>
+        //                        <p class='text-view'>Wrong username or password</p>
+        //                      </div>";
+        //            }
+        //        }
+        //        ?>
         <form method="post" class="mx-5">
             <div class="mb-2">
                 <label class="form-label">Username</label>
